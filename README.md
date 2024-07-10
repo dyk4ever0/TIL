@@ -9,7 +9,7 @@ $ yarn dev
 ### 빌드 및 배포
 
 Opt1. GitHub Actions로 자동화
-[main.yaml](https://github.com/milooy/TIL/blob/master/.github/workflows/main.yml) 참고
+main.yaml 참고
 
 Opt2. 직접 배포
 ```bash
