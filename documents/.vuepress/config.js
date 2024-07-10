@@ -14,14 +14,8 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
-        title: 'Monthly I Learned',
-        children: CONST.MILList
-      }, {
         title: 'DevOps',
         children: CONST.DevOpsList
-      }, {
-        title: 'ETC',
-        children: CONST.ETCList
       }
     ],
     nav: [{
