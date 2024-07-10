@@ -19,7 +19,7 @@ jobs:
       run: yarn build
 
     - name: List build output
-      run: ls -R ./documents/.vuepress/dist
+      run: ls -R documents/.vuepress/dist
 
     - name: Copy build to publish directory
       run: cp -R documents/.vuepress/dist/* ./dist
