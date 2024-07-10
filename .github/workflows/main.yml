@@ -21,6 +21,9 @@ jobs:
     - name: List build output
       run: ls -R ./dist
 
+    - name: Create deploy directory
+      run: mkdir -p ./deploy 
+
     - name: Copy build to publish directory
       run: cp -R ./dist/* ./deploy
 
