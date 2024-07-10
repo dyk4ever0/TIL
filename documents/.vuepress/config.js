@@ -4,7 +4,7 @@ module.exports = {
   title: `Today I Learned`,
   description: `DoYeon's Personal Wiki (Today I Learned)`,
   base: "/TIL/",
-  dest: 'build',
+  dest: './dist',
   head: [
     ['link', {
       rel: 'icon',
