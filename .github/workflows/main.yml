@@ -18,9 +18,12 @@ jobs:
     - name: Build
       run: yarn build
 
+    - name: List build output
+      run: ls -R ./documents/.vuepress/dist
+
     - name: Copy build to publish directory
-      run: cp -R ./.vuepress/dist/* ${{ github.workspace }}/dist
-      
+      run: cp -R ./documents/.vuepress/dist/* ./dist
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
