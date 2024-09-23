@@ -2,7 +2,7 @@ var CONST = require("./const");
 
 module.exports = {
   title: `Today I Learned`,
-  description: `DoYeon's Personal Wiki (Today I Learned)`,
+  description: `Doyeon's Personal Wiki (Today I Learned)`,
   base: "/TIL/",
   dest: './dist',
   head: [
@@ -16,6 +16,10 @@ module.exports = {
       {
         title: 'DevOps',
         children: CONST.DevOpsList
+      },
+      {
+        title: 'DataBase',
+        children: CONST.DataBaseList
       }
     ],
     nav: [{
