@@ -17,5 +17,6 @@ PSUBSCRIBE, PUBLISH
 - **Pub/Sub** = 휘발성. *Fire and Forget*
 - Subscriber의 멀쩡한 정신이 요구
 
-## AWS Cacheup Day 실습 : Elastic Cache를 사용한 아키텍처 예시
+## AWS Cacheup Day 실습
+Elastic Cache를 사용한 아키텍처 예시
 ![image](https://github.com/user-attachments/assets/71bf1c8d-b206-47f2-92c6-2a6a79188407)

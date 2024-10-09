@@ -36,8 +36,6 @@ GitHub Actions를 사용해
 저장소 Settings탭 -> GitHub Pages 섹션에 가서
 Source를 'gh-pages'로 바꾼다. 그러면 gh-pages브랜치에 있는 index.html 읽어서 사이트를 보여줌.
 
-![image](https://user-images.githubusercontent.com/3839771/88663984-56446f80-d117-11ea-9653-5c8a6d3a9d42.png)
-
 ## Step 3: workflow 파일 생성
 
 저장소 루트에 `.github/workflows/main.yml` 파일을 만든다. main말고 원하는 다른 이름 써도 무방.
@@ -48,7 +46,24 @@ https://github.com/marketplace/actions/vuepress-deploy
 
 Dockerfile, Docker Hub 이라고 생각함 될듯. 선언적 문법 매력적이다. 일해라 절해라 적어두기.
 
-[main.yaml](https://github.com/milooy/TIL/blob/master/.github/workflows/main.yml) 참고
+```
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@main
+
+    - name: Vuepress deploy
+      uses: jenkey2011/vuepress-deploy@1.0.1
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BUILD_SCRIPT: yarn && yarn build
+        TARGET_BRANCH: gh-pages
+        BUILD_DIR: build/
+```
 
 ## Step 4: GitHub 저장소에 환경변수 세팅
 
@@ -64,11 +79,7 @@ Generate new token 하면 된다(기존에 만들어놨다면 재활용 해도 �
 이렇게 만든 토큰을
 `저장소 Settings > Secrets > New secret`에 key는 `ACCESS_TOKEN`라 적고 value에 토큰을 복사 붙여넣기 하면 된다. 고럼 yaml 파일이 돌면서 저장소 환경변수를 참고해감.
 
-![image](https://user-images.githubusercontent.com/3839771/88664600-437e6a80-d118-11ea-969e-b07d88bcf008.png)
-
 ## Step 5: Happy TIL-ing!
 
 yaml 파일을 GitHub에 올린다. 코드를 Push할때마다 자동으로 GitHub액션이 돌며 위에 선언한 Yaml코드가 실행된다.
-저장소 Actions 탭에서 확인 가능!
-
-![image](https://user-images.githubusercontent.com/3839771/88665046-f949b900-d118-11ea-9934-de8c9f1858a5.png)
+저장소 Actions 탭에서 확인 가능
