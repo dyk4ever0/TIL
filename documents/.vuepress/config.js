@@ -20,6 +20,10 @@ module.exports = {
       {
         title: 'DataBase',
         children: CONST.DataBaseList
+      },
+      {
+        title: 'GitBook Space',
+        children: CONST.GitBookSpaceList
       }
     ],
     nav: [{
@@ -27,7 +31,7 @@ module.exports = {
       link: 'https://github.com/dyk4ever0/'
     }, {
       text: 'Blog',
-      link: 'https://floatingavocadoseed.tistory.com/'
+      link: ''
     }
     ]
   },
