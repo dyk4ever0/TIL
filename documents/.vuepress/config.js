@@ -20,7 +20,9 @@ module.exports = {
       {
         title: 'DataBase',
         children: CONST.DataBaseList
-      }
+      },
+        title: 'gitbook-pages',
+        children: CONST.gitbookList
     ],
     nav: [{
       text: 'GitHub',
