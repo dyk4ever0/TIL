@@ -23,6 +23,7 @@ module.exports = {
       },
         title: 'gitbook-pages',
         children: CONST.gitbookList
+      }
     ],
     nav: [{
       text: 'GitHub',
