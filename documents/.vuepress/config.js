@@ -20,10 +20,6 @@ module.exports = {
       {
         title: 'DataBase',
         children: CONST.DataBaseList
-      },
-      {
-        title: 'GitBook Space',
-        children: CONST.GitBookSpaceList
       }
     ],
     nav: [{
