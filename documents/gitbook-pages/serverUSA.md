@@ -17,7 +17,7 @@ EC2 서버 로그에서 미국 IP 주소가 감지될 때 원인 분석과 대�
 
 [what is my IP address](https://whatismyipaddress.com/ip-lookup) 의 IP look-up 서비스로 간단히 주소를 찾아본다. 단체/기관명으로 DigitalOcean LLC와 Shadowserver 가 뜨는 것을 찾아볼 수 있었다.
 
-<figure><img src=".gitbook/assets/스크린샷 2024-11-11 13.49.44.png.webp" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/12345.webp" alt=""><figcaption></figcaption></figure>
 
 결론적으로 이들 로그는 Shadowserver나 DigitalOcean LLC와 같은 비영리 보안 기관에서 수행하는 자동 보안 스캔의 결과일 가능성이 크다. 이 기관들은 본인들 피셜(?) 인터넷에 노출된 IP를 대상으로 정기적으로 스캔을 수행하며, 보안 취약점을 진단하고 알려주는 역할을 한다고 한다.
 
