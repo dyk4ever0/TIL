@@ -5,7 +5,7 @@
         <br>오늘 적자
       </h1>
       <div class="infoContainer">
-        <div class="name">⭐️도연 TIL☂️</div>
+        <div class="name">🩷도연 TIL👽</div>
         <ul>
           <li>
             <a href="https://github.com/dyk4ever0">GitHub</a>

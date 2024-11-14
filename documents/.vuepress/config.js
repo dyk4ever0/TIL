@@ -32,7 +32,7 @@ module.exports = {
       link: 'https://github.com/dyk4ever0/'
     }, {
       text: 'Blog',
-      link: ''
+      link: 'https://dyks-organization.gitbook.io/undefined/'
     }]
   },
   configureWebpack: {
