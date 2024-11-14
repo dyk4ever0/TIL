@@ -1,4 +1,5 @@
-var CONST = require("./const");
+const CONST = require("./const");
+const path = require('path');
 
 module.exports = {
   title: `Today I Learned`,
@@ -32,7 +33,28 @@ module.exports = {
     }, {
       text: 'Blog',
       link: ''
-    }
-    ]
+    }]
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '.gitbook/assets': path.resolve(__dirname, '../gitbook-pages/.gitbook/assets'),
+      },
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(png|jpe?g|gif|webp)$/i,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[path][name].[ext]',
+              },
+            },
+          ],
+        },
+      ],
+    },
   },
 }
