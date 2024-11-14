@@ -38,8 +38,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        //'.gitbook/assets': path.resolve(__dirname, '../gitbook-pages/.gitbook/assets'),
-        '.gitbook/assets': path.resolve(__dirname, './documents/gitbook-pages/.gitbook/assets'),
+        '.gitbook/assets': path.resolve(__dirname, '../gitbook-pages/.gitbook/assets'),
+        //.'.gitbook/assets': path.resolve(__dirname, './documents/gitbook-pages/.gitbook/assets'),
       },
     },
     module: {
