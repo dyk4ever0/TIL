@@ -27,7 +27,7 @@ EC2 서버 로그에서 미국 IP 주소가 감지될 때 원인 분석과 대�
 
 ### DigitalOcean LLC 와 Shadowserver의 자동 포트 스캔
 
-DigitalOcean LLC와 Shadowserver의 자동 스캔은 포트 개방 여부나 보안 취약점 확인을 목적으로 수행된다.레딧의 [Cybersecurity 포럼](https://www.reddit.com/r/cybersecurity/comments/ut3ygj/excessive\_port\_scans\_from\_digital\_ocean\_llc/)을 보니 여러 서버 운영자들이 DigitalOcean LLC의 IP 주소에서 포트 스캔을 경험하고 있으며, 이를 일반적인 클라우드 호스팅 환경의 특성으로 보고 있다. DigitalOcean은 저렴한 클라우드 호스팅을 제공하기 때문에 다양한 보안 리서치와 테스트 목적으로 사용되며, 이 과정에서 자동화된 스캔이 발생하는 경우가 많다.
+Shadowserver의 자동 스캔은 포트 개방 여부나 보안 취약점 확인을 목적으로 수행된다.레딧의 [Cybersecurity 포럼](https://www.reddit.com/r/cybersecurity/comments/ut3ygj/excessive\_port\_scans\_from\_digital\_ocean\_llc/)을 보니 여러 서버 운영자들이 DigitalOcean LLC의 IP 주소에서 포트 스캔을 경험하고 있으며, 이를 일반적인 클라우드 호스팅 환경의 특성으로 보고 있다. DigitalOcean은 저렴한 클라우드 호스팅을 제공하기 때문에 다양한 보안 리서치와 테스트 목적으로 사용되며, 이 과정에서 자동화된 스캔이 발생하는 경우가 많다.
 
 *   🌊 레딧 서버 전문가들의 경험에 기반한 조언들 (요약: IP 노출되면 어쩔 수 없다고요. 신경쓰고 내 할일 하는게 정신건강을 지키는 일)\
     `"포트 스캔은 DoS(서비스 거부 공격)를 일으키는 게 아닌 이상 그냥 일어나는 일이다. 막을 방법은 없다. 방화벽에서 ping 응답을 꺼두고 포트 규칙을 설정할 수는 있다. 근데 포트 스캔을 막겠다고 IP를 차단하는 건 마치 막대기로 바다의 파도를 막으려는 것과 같다. 접속을 시도하거나 DoS를 일으키지 않는 이상, 경고를 정보 레벨로 낮추고 무시하는 게 좋다."`\\
