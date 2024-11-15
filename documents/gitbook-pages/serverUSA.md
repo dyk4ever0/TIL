@@ -9,7 +9,9 @@ coverY: 0
 
 ### 상황
 
-EC2 서버 로그에서 미국 IP 주소가 감지될 때 원인 분석과 대응 방법 알아보기미국 IP가 찍히는 원인서버 로그에서 미국 IP 주소가 보이며 GET /login과 같은 경로로 요청을 보낸 로그가 발견된 경우가 있었다.
+EC2 서버 로그에서 미국 IP 주소가 감지될 때 원인 분석과 대응 방법 알아보기
+
+서버 로그에서 미국 IP 주소가 보이며 GET /login과 같은 경로로 요청을 보낸 로그가 발견된 경우가 있었다.
 
 <figure><img src=".gitbook/assets/1731040602.png.webp" alt=""><figcaption><p>서버에 없는 메소드로 api를 호출한 흔적 로그</p></figcaption></figure>
 
@@ -24,8 +26,6 @@ EC2 서버 로그에서 미국 IP 주소가 감지될 때 원인 분석과 대�
 * 자세한 정보는 [Shadowserver](https://www.shadowserver.org/faq/why-are-your-ips-scanning-my-network/)의 FAQ에서 확인 가능
 
 ### DigitalOcean LLC 와 Shadowserver의 자동 포트 스캔
-
-DigitalOcean LLC와 Shadowserver의 자동 스캔은 포트 개방 여부나 보안 취약점 확인을 목적으로 수행된다.레딧의 [Cybersecurity 포럼](https://www.reddit.com/r/cybersecurity/comments/ut3ygj/excessive\_port\_scans\_from\_digital\_ocean\_llc/)을 보니 여러 서버 운영자들이 DigitalOcean LLC의 IP 주소에서 포트 스캔을 경험하고 있으며, 이를 일반적인 클라우드 호스팅 환경의 특성으로 보고 있다. DigitalOcean은 저렴한 클라우드 호스팅을 제공하기 때문에 다양한 보안 리서치와 테스트 목적으로 사용되며, 이 과정에서 자동화된 스캔이 발생하는 경우가 많다.
 
 DigitalOcean LLC와 Shadowserver의 자동 스캔은 포트 개방 여부나 보안 취약점 확인을 목적으로 수행된다.레딧의 [Cybersecurity 포럼](https://www.reddit.com/r/cybersecurity/comments/ut3ygj/excessive\_port\_scans\_from\_digital\_ocean\_llc/)을 보니 여러 서버 운영자들이 DigitalOcean LLC의 IP 주소에서 포트 스캔을 경험하고 있으며, 이를 일반적인 클라우드 호스팅 환경의 특성으로 보고 있다. DigitalOcean은 저렴한 클라우드 호스팅을 제공하기 때문에 다양한 보안 리서치와 테스트 목적으로 사용되며, 이 과정에서 자동화된 스캔이 발생하는 경우가 많다.
 
@@ -52,5 +52,5 @@ DigitalOcean LLC와 Shadowserver의 포트 스캔은 일반적으로 서버의 �
 
 혹시라도 스캔해 오는 IP를 좀 괴롭히고 싶다면, 허니팟(타르 핏) 설정도 재미있는 방법. 타르 핏은 공격자의 자원을 소모시키면서 시간을 질질 끄는 방식으로, 딱히 위험하지는 않지만 그들 입장에선 진짜 답답한 상황을 만들 수 있음. 다만, 보안 평가 같은 스캔이면 오히려 평가 점수가 나빠질 수 있으니 주의하자.
 
-인터넷에 서버를 두면 전 세계 수많은 '손님'이 쳐다보게 되어있음. 스캔 때문에 긴장할 필요는 없지만, 진짜 중요한 건 불필요한 서비스 차단과 보안 패치라고 조언. 서버가 오픈된 이상, 세상은 우리 서버를 기웃거리는 나쁜 사람들로 가득하다는 걸 기억하자.​
+인터넷에 서버를 두면 전 세계 수많은 '손님'이 쳐다보게 되어있음. 스캔 때문에 긴장할 필요는 없지만, 진짜 중요한 건 방화벽을 통한 불필요한 서비스 차단과 보안 패치이다. 서버가 오픈된 이상, 세상은 우리 서버를 기웃거리는 클라이언트들로 가득하다는 걸 기억하자.​
 
