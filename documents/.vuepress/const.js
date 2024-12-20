@@ -5,14 +5,13 @@ function getMarkdownFiles(dir) {
   const baseDir = path.resolve(__dirname, '../'); 
   const targetDir = path.join(baseDir, dir);
 
-  return fs.readdirSync(targetDir)
+  const files = fs.readdirSync(targetDir)
     .filter(file => file.endsWith('.md'))
-    .map(file => {
-      if (file === 'README.md') {
-        return `${dir}/`;
-      }
-      return `${dir}/${file}`;
-    });
+    .map(file => file === 'README.md' ? `${dir}/` : `${dir}/${file}`);
+
+  console.log(`Markdown files in ${dir}:`, files);
+  
+  return files;
 }
 
 exports.DevOpsList = getMarkdownFiles('DevOps');
