@@ -7,7 +7,12 @@ function getMarkdownFiles(dir) {
 
   return fs.readdirSync(targetDir)
     .filter(file => file.endsWith('.md'))
-    .map(file => `${dir}/${file}`);
+    .map(file => {
+      if (file === 'README.md') {
+        return `${dir}/`;
+      }
+      return `${dir}/${file}`;
+    });
 }
 
 exports.DevOpsList = getMarkdownFiles('DevOps');
