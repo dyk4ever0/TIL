@@ -147,7 +147,7 @@ sql코드 복사DROP SCHEMA IF EXISTS predict CASCADE;
 `predict`라는 새 스키마를 생성함.
 
 ```sql
-sql코드 복사CREATE SCHEMA predict;
+CREATE SCHEMA predict;
 ```
 
 ***
@@ -157,7 +157,7 @@ sql코드 복사CREATE SCHEMA predict;
 `public.ready_to_predict` 테이블의 모든 데이터를 `predict.ready_to_predict` 테이블로 복사함.
 
 ```sql
-sql코드 복사CREATE TABLE predict.ready_to_predict AS
+CREATE TABLE predict.ready_to_predict AS
 SELECT * FROM public.ready_to_predict;
 ```
 
@@ -168,7 +168,7 @@ SELECT * FROM public.ready_to_predict;
 `aiserver` 사용자에게 `predict` 스키마에 대한 접근 및 테이블 권한을 부여함.
 
 ```sql
-sql코드 복사GRANT USAGE ON SCHEMA predict TO aiserver;
+GRANT USAGE ON SCHEMA predict TO aiserver;
 GRANT ALL ON ALL TABLES IN SCHEMA predict TO aiserver;
 ```
 
@@ -179,7 +179,7 @@ GRANT ALL ON ALL TABLES IN SCHEMA predict TO aiserver;
 새로 생성되는 테이블에도 자동으로 권한이 부여되도록 설정함.
 
 ```sql
-sql코드 복사ALTER DEFAULT PRIVILEGES IN SCHEMA predict
+ALTER DEFAULT PRIVILEGES IN SCHEMA predict
 GRANT ALL ON TABLES TO aiserver;
 ```
 
@@ -192,7 +192,7 @@ GRANT ALL ON TABLES TO aiserver;
 * `public`에만 존재하는 데이터:
 
 ```sql
-sql코드 복사SELECT *
+SELECT *
 FROM public.ready_to_predict
 EXCEPT
 SELECT *
@@ -202,7 +202,7 @@ FROM predict.ready_to_predict;
 * `predict`에만 존재하는 데이터:
 
 ```sql
-sql코드 복사SELECT *
+SELECT *
 FROM predict.ready_to_predict
 EXCEPT
 SELECT *
@@ -216,7 +216,7 @@ FROM public.ready_to_predict;
 `predict.ready_to_predict` 테이블의 행 수를 확인하여 복사가 제대로 이루어졌는지 검증함.
 
 ```sql
-sql코드 복사SELECT COUNT(*) AS row_count
+SELECT COUNT(*) AS row_count
 FROM predict.ready_to_predict;
 ```
 
@@ -229,7 +229,7 @@ FROM predict.ready_to_predict;
 `pandas.DataFrame.to_sql` 메서드에서 `schema='predict'`를 지정하여 데이터가 `predict` 스키마에 저장되도록 변경함.
 
 ```python
-python코드 복사df_DB.to_sql(
+df_DB.to_sql(
     'ready_to_predict',  # 테이블 이름
     engine,              # 데이터베이스 엔진
     schema='predict',    # 스키마 지정
@@ -245,7 +245,7 @@ python코드 복사df_DB.to_sql(
 서버에서 데이터베이스 연결 및 `predict.ready_to_predict` 테이블 조회를 테스트하기 위한 엔드포인트를 추가함.
 
 ```python
-python코드 복사from sqlalchemy import text
+from sqlalchemy import text
 
 @app.get("/test-db-connection/")
 def test_db_connection():
